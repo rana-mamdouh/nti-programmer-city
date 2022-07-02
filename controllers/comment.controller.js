@@ -1,12 +1,14 @@
 const postModel = require('../database/models/post.model')
 const commentModel = require('../database/models/comment.model')
+const userModel = require('../database/models/user.model')
 
 class Comment {
     static add = async (req, res) => {
         try {
             const comment = new commentModel({
                 ...req.body,
-                userName: req.user._id,
+                userId: req.user._id,
+                userName: req.user.name,
                 postId: req.params.id
             })
             await comment.save()

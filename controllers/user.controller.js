@@ -249,7 +249,6 @@ class User {
     }
 
     static sendPhoto = (req, res) => {
-        console.log(req.params.img)
         try {
             res.sendFile( `images\\${req.params.img}`, { root: '.' })
         } catch (error) {

@@ -7,11 +7,24 @@ const commentSchema = mongoose.Schema({
         ref: "Post",
         required: true
     },
-    
+
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true
+    },
+
+    userName: {
+        firstName: {
+            type: String,
+            trim: true,
+            required: true
+        },
+        lastName: {
+            type: String,
+            trim: true,
+            required: true
+        }
     },
 
     content: {
